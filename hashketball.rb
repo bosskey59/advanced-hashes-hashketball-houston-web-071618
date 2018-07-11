@@ -311,6 +311,19 @@ def winning_team
       end
     end
   end
+  
+  game_hash[:away].each do |attribute, data|
+    # binding.pry
+    if attribute == :players
+      data.each do |player_name, players_stats|
+          players_stats.each do |stat, value|
+            if stat.to_s =="points"
+              home_points+=value
+            end
+          end
+      end
+    end
+  end  
 
   return name_of_most_points
 end
