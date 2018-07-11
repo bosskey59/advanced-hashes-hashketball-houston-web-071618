@@ -330,6 +330,7 @@ def winning_team
   elsif away_points>home_points
     return game_hash[:away][:team_name]  
   else
+    return "tie"
 end
 
   return name_of_most_points
