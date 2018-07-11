@@ -342,13 +342,8 @@ def player_with_longest_name
       # binding.pry
       if attribute == :players
         data.each do |player_name, players_stats|
-            players_stats.each do |stat, value|
-              if stat.to_s =="points"
-                if most_points == nil || value>most_points
-                  most_points=value
-                  name_of_most_points=player_name.to_s
-                end
-              end
+            if player_name.length > longest_name
+              
             end
         end
       end
