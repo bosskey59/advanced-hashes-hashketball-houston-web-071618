@@ -296,9 +296,9 @@ def most_points_scored
 end
 
 def winning_team
-  most_points = nil
+  most_points = 0
   home_points = 0
-
+  away_points = 0
   game_hash[:home].each do |attribute, data|
     # binding.pry
     if attribute == :players
