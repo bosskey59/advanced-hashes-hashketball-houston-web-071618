@@ -297,21 +297,21 @@ end
 
 def winning_team
   most_points = nil
-  
-  game_hash.each do |location, team_data|
-    game_hash[:home].each do |attribute, data|
-      # binding.pry
-      if attribute == :players
-        data.each do |player_name, players_stats|
-            players_stats.each do |stat, value|
-              if stat.to_s =="points"
-                value+
-              end
+  home_points = 0
+
+  game_hash[:home].each do |attribute, data|
+    # binding.pry
+    if attribute == :players
+      data.each do |player_name, players_stats|
+          players_stats.each do |stat, value|
+            if stat.to_s =="points"
+              home_points+=value
             end
-        end
+          end
       end
     end
   end
+
   return name_of_most_points
 end
 
