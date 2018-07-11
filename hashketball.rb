@@ -296,7 +296,6 @@ def most_points_scored
 end
 
 def winning_team
-  most_points = 0
   home_points = 0
   away_points = 0
   game_hash[:home].each do |attribute, data|
@@ -331,8 +330,31 @@ def winning_team
     return game_hash[:away][:team_name]  
   else
     return "tie"
+  end
+
+  return name_of_most_points
 end
 
+def player_with_longest_name
+  most_points = nil
+  name_of_most_points = ""
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      # binding.pry
+      if attribute == :players
+        data.each do |player_name, players_stats|
+            players_stats.each do |stat, value|
+              if stat.to_s =="points"
+                if most_points == nil || value>most_points
+                  most_points=value
+                  name_of_most_points=player_name.to_s
+                end
+              end
+            end
+        end
+      end
+    end
+  end
   return name_of_most_points
 end
 
