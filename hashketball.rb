@@ -350,7 +350,7 @@ def player_with_longest_name
       end
     end
   end
-  return name_of_most_points
+  return longest_name
 end
 
 
