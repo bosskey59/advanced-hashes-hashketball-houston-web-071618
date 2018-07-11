@@ -318,7 +318,7 @@ def winning_team
       data.each do |player_name, players_stats|
           players_stats.each do |stat, value|
             if stat.to_s =="points"
-              home_points+=value
+              away_points+=value
             end
           end
       end
